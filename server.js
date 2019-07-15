@@ -3,7 +3,7 @@ const express = require("express");
 const app = express();
 app.use(express.static(__dirname + "/"));
 
-let port = 80
+let port = process.env.PORT || 4050
 let server = app.listen(port, () => console.log(`Server started at port ${port}`));
 let client =  require("socket.io")(server);
 
